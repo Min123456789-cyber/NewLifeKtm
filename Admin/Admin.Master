@@ -1,0 +1,86 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="NewLifeKtm.Admin.Admin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Admin Portal</title>
+
+    <link href="../Bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <script defer src="../Bootstrap/bootstrap.bundle.min.js"></script>
+
+    <style>
+        header {
+            background: #336699;
+            text-align: center;
+        }
+
+        nav {
+            background: #86BBD8;
+        }
+
+        #navbarSupportedContent {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <header>
+            <div class="container-fluid">
+                <h1 class="p-3 text-white">NewLife KTM</h1>
+            </div>
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                        <ul class="navbar-nav m-left mb-4 mb-lg-0 fs-5">
+                            <li class="nav-item">
+                                <a class="nav-link icon-link icon-link-hover" style="color: white;" aria-current="page" href="Dashboard.aspx">Dashboard</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link icon-link icon-link-hover" style="color: white;" aria-current="page" href="Details.aspx">Detail Form</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link icon-link icon-link-hover" style="color: white;" aria-current="page" href="PraiseReport.aspx">Praise Report</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link icon-link icon-link-hover" style="color: white;" aria-current="page" href="PrayerRequest.aspx">Prayer Request</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link icon-link icon-link-hover" style="color: white;" aria-current="page" href="TotalPeople.aspx">TotalPeople</a>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav m-right mb-2 mb-lg-0 fs-5">
+                            <li class="nav-item">
+                                <asp:LinkButton ID="LinkLogin" class="nav-link icon-link icon-link-hover" style="color: white;" runat="server" OnClick="LinkLogin_Click">Login</asp:LinkButton>
+                            </li>
+                            <li class="nav-item">
+                                <asp:LinkButton ID="LinkHello" class="nav-link icon-link icon-link-hover" style="color: white;" Visible="false" runat="server">Hello</asp:LinkButton> 
+                            </li>
+                            <li class="nav-item">
+                                <asp:LinkButton class="nav-link icon-link icon-link-hover" Style="color: white;" ID="LinkButton1" Visible="false" runat="server" OnClick="LinkButton1_Click">Logout</asp:LinkButton>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
